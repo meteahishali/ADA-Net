@@ -1,0 +1,33 @@
+data-folder-A = data/
+data-folder-B = data/
+
+dataset-type = h5 # jpg, png, etc.
+
+# Use this if the data type is h5.
+hdf5-file-A-train = USA_RGBNIR_60cm_train.h5
+hdf5-file-A-test = USA_RGBNIR_60cm_test.h5
+hdf5-file-B = Finland_RGBNIR_25cm.h5
+
+output-dir = output/
+
+train-load-size = 256 # This is valid only for the image datasets not h5.
+train-crop-size = 256
+
+input-channels = 4
+output-channels = 4
+
+train-batch-size = 8
+num-workers = 4 # Number of worker for loading the data.
+
+epoch-start = 1
+initial-epochs = 10 # Initial learning rate
+decay-epochs = 30 # Then linearly decay the learning rate to zero
+resume-epoch = 'latest' # or some specific number 20, 30, and 40
+
+learning-rate = 2e-6
+beta1 = 0.5
+beta2 = 0.999
+
+augment-mode='full' # Note: this is always full for .h5 files even if you set to 'partial' (hard-coded in the code).
+
+gan-mode = lsgan # vanilla, lsgan, wgang
